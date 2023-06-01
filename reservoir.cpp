@@ -1,4 +1,4 @@
-#include "reservoir.h"
+ï»¿#include "reservoir.h"
 
 Reservoir::Reservoir()
 {
@@ -86,11 +86,11 @@ Reservoir::~Reservoir()
 
 void Reservoir::ShowData() const
 {
-	std::cout << "\nÒèï âîäî¸ìà: " << _type << ";\n";
-	std::cout << "Íàçâàíèå âîäî¸ìà: " << _name << ";\n";
-	std::cout << "Äëèíà âîäî¸ìà: " << _length << ' ' << _unitOfMeasurement << ";\n";
-	std::cout << "Øèðèíà âîäî¸ìà: " << _width << ' ' << _unitOfMeasurement << ";\n";
-	std::cout << "Ãëóáèíà âîäî¸ìà: " << _depth << ' ' << _unitOfMeasurement << ".\n";
+	std::cout << "\nÐ¢Ð¸Ð¿ Ð²Ð¾Ð´Ð¾Ñ‘Ð¼Ð°: " << _type << ";\n";
+	std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð²Ð¾Ð´Ð¾Ñ‘Ð¼Ð°: " << _name << ";\n";
+	std::cout << "Ð”Ð»Ð¸Ð½Ð° Ð²Ð¾Ð´Ð¾Ñ‘Ð¼Ð°: " << _length << ' ' << _unitOfMeasurement << ";\n";
+	std::cout << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð²Ð¾Ð´Ð¾Ñ‘Ð¼Ð°: " << _width << ' ' << _unitOfMeasurement << ";\n";
+	std::cout << "Ð“Ð»ÑƒÐ±Ð¸Ð½Ð° Ð²Ð¾Ð´Ð¾Ñ‘Ð¼Ð°: " << _depth << ' ' << _unitOfMeasurement << ".\n";
 
 }
 
@@ -105,7 +105,7 @@ int Reservoir::CompareSurfaceArea(Reservoir& r)
 {
 	if (!CheckTypes(r))
 	{
-		std::cout << "Âîäî¸ìû ðàçíûõ òèïîâ.\n";
+		std::cout << "Ð’Ð¾Ð´Ð¾Ñ‘Ð¼Ñ‹ Ñ€Ð°Ð·Ð½Ñ‹Ñ… Ñ‚Ð¸Ð¿Ð¾Ð².\n";
 		return -2;
 	}
 	else
