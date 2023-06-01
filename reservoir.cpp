@@ -112,12 +112,12 @@ int Reservoir::CompareSurfaceArea(Reservoir& r)
 	{
 		if (SurfaceArea() == r.SurfaceArea())
 		{
-			return 0;
+			return 0;							// возвращает ноль если площади поверхности водоёмов одинаковые
 		}
 		else if (SurfaceArea() > r.SurfaceArea())
 		{
-			return 1;
+			return 1;							// возвращает 1 если площадь текущего объекта больше площади переданного методу
 		}
 	}
-	return -1;
+	return -1;									// возвращает -1 если площадь переданного объекта больше площади текущего
 }

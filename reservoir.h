@@ -1,4 +1,4 @@
-#ifndef _RESERVOIR_H_
+﻿#ifndef _RESERVOIR_H_
 #define _RESERVOIR_H_
 
 #include <string>
@@ -15,11 +15,12 @@ private:
 	double _depth;
 
 public:
+	// конструкто по умолчанию
 	Reservoir();
-
+	// конструкто с параметрами
 	explicit Reservoir(const char* type, const char* name, const char* unitOfMeasurment, double length, double width, double depth);
-	
-	Reservoir(const Reservoir& reservoir);
+	// конструктор копирования
+	explicit Reservoir(const Reservoir& reservoir);
 	
 	~Reservoir();
 
@@ -53,18 +54,22 @@ public:
 		return _depth;
 	}
 
+	// метод для расчёта примерного объёма водоёма
 	double ApproximateVolume()
 	{
 		return _length * _width * _depth;
 	}
-
+	
+	// метод для расчёта примерной площади поверхности
 	double SurfaceArea()
 	{
 		return _length * _width;
 	}
 
+	// метод для сравнения типов водоёмов
 	bool CheckTypes(const Reservoir& r) const;
 
+	// метод для сравнения площадей поверхности водоёмов
 	int CompareSurfaceArea(Reservoir& r);
 
 	void ShowData() const;
