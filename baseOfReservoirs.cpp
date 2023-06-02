@@ -67,3 +67,32 @@ bool BaseOfReservoirs::WriteBaseToFile(const char*const filename)
 	}
 	return false;
 }
+
+bool BaseOfReservoirs::WriteBaseToBinaryFile(const char* const filename)
+{
+	std::ofstream fout;
+	fout.open(filename, std::ios::binary);
+	if (fout.is_open())
+	{
+		for (auto it = _baseOfReservoirs.begin(); it != _baseOfReservoirs.end(); ++it)
+		{
+			fout.write((char*)&*(it), sizeof(*(it)));
+		}
+		fout.close();
+		return true;
+	}
+	return false;
+}
+
+bool BaseOfReservoirs::ReadBaseToBinaryFile(const char* const filename)
+{
+	std::ifstream fin;
+	fin.open(filename, std::ios::binary);
+	if (fin.is_open())
+	{
+		fin.seekg(sizeof(_baseOfReservoirs));
+		fin.read((char*)this, sizeof(this));
+		return true;
+	}
+	return false;
+}

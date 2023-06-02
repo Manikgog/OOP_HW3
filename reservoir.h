@@ -15,9 +15,9 @@ private:
 	double _depth;
 
 public:
-	// конструкто по умолчанию
+	// конструктор по умолчанию
 	Reservoir();
-	// конструкто с параметрами
+	// конструктор с параметрами
 	explicit Reservoir(const char* type, const char* name, const char* unitOfMeasurment, double length, double width, double depth);
 	// конструктор копирования
 	explicit Reservoir(const Reservoir& reservoir);

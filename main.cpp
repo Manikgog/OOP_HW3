@@ -63,10 +63,13 @@ int main() {
 	base.AddReservoir(&r3);
 	base.AddReservoir(&r5);
 	base.AddReservoir(&r6);
-	base.WriteBaseToFile("base_of_reservoirs.txt");
-	base.ShowBase();
-	std::cout << "\n--------------------------------------------------\n";
+	base.WriteBaseToBinaryFile("base_of_reservoirs.bin");
+	//base.ShowBase();
+	/*std::cout << "\n--------------------------------------------------\n";
 	base.DeleteElement("Байкал");
+	base.ShowBase();*/
+	
+	base.ReadBaseToBinaryFile("base_of_reservoirs.bin");
 	base.ShowBase();
 
 	return 0;
