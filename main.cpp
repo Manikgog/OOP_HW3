@@ -38,38 +38,38 @@ int main() {
 	//Reservoir r1;
 	//r1.ShowData();
 
-	Reservoir r2("Море", "Чёрное море", "км", 1150, 580, 1.24);
+	//Reservoir r2("Море", "Чёрное море", "км", 1150, 580, 1.24);
 	//r2.ShowData();
 	//std::cout << "Примерный объём: " << r2.ApproximateVolume() << " куб." << r2.GetUnitOfMeasurement() << ".\n\n";
 
-	Reservoir r3("озеро", "Байкал", "км", 636, 79, 1.187);
+	//Reservoir r3("озеро", "Байкал", "км", 636, 79, 1.187);
 	/*r3.ShowData();
 	std::cout << "Примерный объём: " << r3.ApproximateVolume() << " куб." << r3.GetUnitOfMeasurement() << ".\n\n";*/
 
-	Reservoir r4(r3);
+	//Reservoir r4(r3);
 	//r4.ShowData();
 	//std::cout << "Примерный объём: " << r4.ApproximateVolume() << " куб." << r4.GetUnitOfMeasurement() << ".\n\n";
 
-	Reservoir r5("озеро", "Онежское озеро", "км", 248, 91, 0.03);
+	//Reservoir r5("озеро", "Онежское озеро", "км", 248, 91, 0.03);
 	//std::cout << r5.CheckTypes(r3) << std::endl;
 
-	Reservoir r6("МОРЕ", "Азовское море", "км", 380, 200, 0.0074);
+	//Reservoir r6("МОРЕ", "Азовское море", "км", 380, 200, 0.0074);
 
 	/*if (r3.CompareSurfaceArea(r5) == 1)
 		std::cout << "Озеро " << r3.GetName() << " больше озера " << r5.GetName() << std::endl;*/
 
 	BaseOfReservoirs base;
-	base.AddReservoir(&r2);
-	base.AddReservoir(&r3);
-	base.AddReservoir(&r5);
-	base.AddReservoir(&r6);
-	base.WriteBaseToBinaryFile("base_of_reservoirs.bin");
+	//base.AddReservoir(&r2);
+	//base.AddReservoir(&r3);
+	//base.AddReservoir(&r5);
+	//base.AddReservoir(&r6);
+	//base.WriteBaseToBinaryFile("base_of_reservoirs.bin");
 	//base.ShowBase();
 	/*std::cout << "\n--------------------------------------------------\n";
 	base.DeleteElement("Байкал");
 	base.ShowBase();*/
 	
-	base.ReadBaseToBinaryFile("base_of_reservoirs.bin");
+	base.ReadBaseBinaryFile("base_of_reservoirs.bin");
 	base.ShowBase();
 
 	return 0;

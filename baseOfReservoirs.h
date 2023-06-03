@@ -20,7 +20,7 @@ public:
 	void DeleteElement(const char* const name);				// метод для удаления элемента с именем name
 	bool WriteBaseToFile(const char* const filename);		// метод для записи элементов вектора _baseOfReservoirs в текстовый файл
 	bool WriteBaseToBinaryFile(const char* const filename); // метод для записи элементов вектора _baseOfReservoirs в бинарный файл
-	bool ReadBaseToBinaryFile(const char* const filename);	// метод для чтения из бинарного файла
+	bool ReadBaseBinaryFile(const char* const filename);	// метод для чтения из бинарного файла
 	~BaseOfReservoirs();
 };
 

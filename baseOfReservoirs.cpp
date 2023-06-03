@@ -74,24 +74,67 @@ bool BaseOfReservoirs::WriteBaseToBinaryFile(const char* const filename)
 	fout.open(filename, std::ios::binary);
 	if (fout.is_open())
 	{
-		for (auto it = _baseOfReservoirs.begin(); it != _baseOfReservoirs.end(); ++it)
+		struct reservoir
 		{
-			fout.write((char*)&*(it), sizeof(*(it)));
+			char type[lengthOfString];
+			char name[lengthOfString];
+			char unitOfMeasurement[lengthOfString];
+			double length;
+			double width;
+			double depth;
+		};
+		for (int j = 0; j < _baseOfReservoirs.size(); ++j)
+		{
+			static reservoir res;
+			for (int i = 0; i < lengthOfString; ++i)
+			{
+				res.type[i] = _baseOfReservoirs[j]->GetType()[i];
+			}
+			for (int i = 0; i < lengthOfString; ++i)
+			{
+				res.name[i] = _baseOfReservoirs[j]->GetName()[i];
+			}
+			for (int i = 0; i < lengthOfString; ++i)
+			{
+				res.unitOfMeasurement[i] = _baseOfReservoirs[j]->GetUnitOfMeasurement()[i];
+			}
+			res.length = _baseOfReservoirs[j]->GetLength();
+			res.width = _baseOfReservoirs[j]->GetWidth();
+			res.depth = _baseOfReservoirs[j]->GetDepth();
+			
+
+			fout.write((char*)&res, sizeof(reservoir));
 		}
+
+
 		fout.close();
 		return true;
 	}
 	return false;
 }
 
-bool BaseOfReservoirs::ReadBaseToBinaryFile(const char* const filename)
+bool BaseOfReservoirs::ReadBaseBinaryFile(const char* const filename)
 {
 	std::ifstream fin;
 	fin.open(filename, std::ios::binary);
 	if (fin.is_open())
 	{
-		fin.seekg(sizeof(_baseOfReservoirs));
-		fin.read((char*)this, sizeof(this));
+		struct reservoir
+		{
+			char type[lengthOfString];
+			char name[lengthOfString];
+			char unitOfMeasurement[lengthOfString];
+			double length;
+			double width;
+			double depth;
+		};
+
+		reservoir res;
+		while (fin.read((char*)&res, sizeof(reservoir)))
+		{
+			_baseOfReservoirs.push_back(new Reservoir(res.type, res.name, res.unitOfMeasurement, res.length, res.width, res.depth));
+		}
+
 		return true;
 	}
 	return false;

@@ -14,8 +14,8 @@ Reservoir::Reservoir(const char* type, const char* name, const char* unitOfMeasu
 {
 	if(_type)
 			delete[] _type;
-	_type = new char[strlen(type) + 1] {};
-	for (int i = 0; i < strlen(type) + 1; ++i)
+	_type = new char[lengthOfString] {};
+	for (int i = 0; i < strlen(type); ++i)
 	{
 		if (type[i] == ' ')
 			continue;
@@ -24,7 +24,7 @@ Reservoir::Reservoir(const char* type, const char* name, const char* unitOfMeasu
 
 	if(_name)
 			delete[] _name;
-	_name = new char[strlen(name) + 1] {};
+	_name = new char[lengthOfString] {};
 	for (int i = 0; i < strlen(name) + 1; ++i)
 	{
 		_name[i] = name[i];
@@ -32,7 +32,7 @@ Reservoir::Reservoir(const char* type, const char* name, const char* unitOfMeasu
 
 	if (_unitOfMeasurement)
 		delete[] _unitOfMeasurement;
-	_unitOfMeasurement = new char[strlen(unitOfMeasurement) + 1] {};
+	_unitOfMeasurement = new char[lengthOfString] {};
 	for (int i = 0; i < strlen(unitOfMeasurement) + 1; ++i)
 	{
 		_unitOfMeasurement[i] = tolower(unitOfMeasurement[i]);
@@ -47,7 +47,7 @@ Reservoir::Reservoir(const Reservoir& reservoir)
 {
 	if (_type)
 		delete[] _type;
-	_type = new char[strlen(reservoir._type) + 1] {};
+	_type = new char[lengthOfString] {};
 	for (int i = 0; i < strlen(reservoir._type) + 1; ++i)
 	{
 		_type[i] = reservoir._type[i];
@@ -55,7 +55,7 @@ Reservoir::Reservoir(const Reservoir& reservoir)
 
 	if (_name)
 		delete[] _name;
-	_name = new char[strlen(reservoir._name) + 1] {};
+	_name = new char[lengthOfString] {};
 	for (int i = 0; i < strlen(reservoir._name) + 1; ++i)
 	{
 		_name[i] = reservoir._name[i];
@@ -63,7 +63,7 @@ Reservoir::Reservoir(const Reservoir& reservoir)
 
 	if (_unitOfMeasurement)
 		delete[] _unitOfMeasurement;
-	_unitOfMeasurement = new char[strlen(reservoir._unitOfMeasurement) + 1] {};
+	_unitOfMeasurement = new char[lengthOfString] {};
 	for (int i = 0; i < strlen(reservoir._unitOfMeasurement) + 1; ++i)
 	{
 		_unitOfMeasurement[i] = reservoir._unitOfMeasurement[i];

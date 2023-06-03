@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+const int lengthOfString = 50;
+
 class Reservoir
 {
 private:
